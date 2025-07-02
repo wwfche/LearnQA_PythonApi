@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 class TestCookieApi:
     def test_homework_header(self):
