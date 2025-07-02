@@ -1,17 +1,18 @@
 import requests
 
-def test_homework_cookie():
-    url = 'https://playground.learnqa.ru/api/homework_cookie'
-    response = requests.get(url)
+class TestCookieApi:
+    def test_homework_header(self):
+        url = 'https://playground.learnqa.ru/api/homework_header'
+        response = requests.get(url)
 
-    cookies = response.cookies
-    print(f"Полученные cookies: {cookies}")
+        headers = response.headers
+        print(f"Полученные заголовки: {headers}")
 
-    cookie_name = 'HomeWork'
-    assert cookie_name in cookies, f"Ожидалась cookie с именем '{cookie_name}', но она не найдена"
+        header_name = 'x-secret-homework-header'
+        assert header_name in headers, f"Заголовок '{header_name}' не найден в ответе"
 
-    cookie_value = cookies.get(cookie_name)
-    print(f"Значение cookie '{cookie_name}': {cookie_value}")
+        header_value = headers[header_name]
+        print(f"Значение заголовка '{header_name}': {header_value}")
 
-    expected_value = 'hw_value'
-    assert cookie_value == expected_value, f"Ожидалось значение '{expected_value}', но получено '{cookie_value}'"
+        expected_value = 'Some secret value'
+        assert header_value == expected_value, f"Ожидалось значение '{expected_value}', но получено '{header_value}'"
