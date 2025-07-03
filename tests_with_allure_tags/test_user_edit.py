@@ -6,7 +6,9 @@ from lib.assertions import Assertions
 
 
 class TestUserEdit(BaseCase):
+# Этот тег объединяет все тесты по глобальной теме, например: работа с пользователями
     @allure.epic('User Editing')
+# Здесь указывается конкретная часть функционала, например: регистрация или авторизация
     @allure.feature('API Testing')
 
     def setup_method(self):

@@ -5,7 +5,9 @@ from lib.assertions import Assertions
 
 
 class TestUserGet(BaseCase):
+# Этот тег объединяет все тесты по глобальной теме, например: работа с пользователями
     @allure.epic('User Info Retrieval')
+# Здесь указывается конкретная часть функционала, например: регистрация или авторизация
     @allure.feature('API Testing')
     def test_get_user_data_as_another_user(self):
         # Авторизуемся как user_id=2

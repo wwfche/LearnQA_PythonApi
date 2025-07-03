@@ -8,7 +8,9 @@ from lib.assertions import Assertions
 
 
 class TestUserRegister(BaseCase):
+# Этот тег объединяет все тесты по глобальной теме, например: работа с пользователями
     @allure.epic('User Registration')
+# Здесь указывается конкретная часть функционала, например: регистрация или авторизация
     @allure.feature('API Testing')
     base_url = "https://playground.learnqa.ru/api/user/"
 
